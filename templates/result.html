@@ -1,0 +1,33 @@
+<!doctype html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+
+<section class="bg-white dark:bg-gray-900 pt-8 pb-0 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+  <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Congress Connect</h1>
+  <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Congress Connect allows you to have easy access to information about your congressional representatives.</p>
+  <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+  </div>
+</section>
+
+<div class="flex items-center justify-center">
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      {% for result in results %}
+        <div class="flex items-center justify-center">
+          <a href="#">
+            <img class="p-8" src="{{ result['image'] }}" alt="{{ result['name'] }}" style="border-radius: 10%">
+          </a>
+        </div>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">{{ result['name'] }} - {{ result['current_role']['district'] }}</h5>
+            <h4 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">Party: {{ result['name'] }}</h4>
+          </a>
+      {% endfor %}
+    </div>
+</div>
