@@ -1,6 +1,6 @@
 import json
 from flask import Flask, render_template, request
-from helpers.image import get_image_by_zip, get_all_information
+from helpers.functions import get_image_by_zip, get_all_information
 
 app = Flask(__name__)
 
